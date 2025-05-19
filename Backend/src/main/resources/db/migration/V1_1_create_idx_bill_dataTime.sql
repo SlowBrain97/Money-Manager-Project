@@ -1,0 +1,1 @@
+CREATE INDEX idx_bill_date_Time ON bill(dateTime);
