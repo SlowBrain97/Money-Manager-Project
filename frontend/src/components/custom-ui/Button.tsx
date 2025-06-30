@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 
 // Define button variants using cva
 const buttonVariants = cva(
-  "inline-flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none relative hover:scale-105 duration-100 transition-transform ease-out",
+  "flex items-center justify-center font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none relative hover:scale-105 duration-100 transition-transform ease-out",
   {
     variants: {
       variant: {

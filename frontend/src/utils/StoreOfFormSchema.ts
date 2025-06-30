@@ -48,3 +48,36 @@ export const BillFormContent = () => {
     }
     return {billFields, billSchema,defaultValue};
 }
+
+export const LoginFormContent = () => {
+    const LoginFields = [
+            {
+                name: "email",
+                type: "email" as const,
+                label: "Email",
+                placeholder: "Input your username, example: abc123@gmail.com",
+                required: true,
+            },
+            {
+                name: "password",
+                type: "password" as const,
+                label : "Password",
+                placeholder: "Input your password",
+                required:true,
+            }
+    ]
+        
+
+
+    const LoginSchema = z.object({
+        email: z.string().email().min(8),
+        password: z.string().min(8).regex(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/,{
+            message: "Password must be 8 letters include lowercase, uppercase, number"
+        })
+    })
+    const defaultValue = {
+        email: "",
+        password: "",
+    }
+    return {LoginFields, LoginSchema,defaultValue};
+}

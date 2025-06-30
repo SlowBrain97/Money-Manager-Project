@@ -9,7 +9,7 @@ import org.example.backend.Entity.Role;
 
 public class CreateNewUserRequest {
   @NotBlank(message = "Username not be blank")
-  private String username;
+  private String email;
   @NotBlank
   private String firstName;
   @NotBlank

@@ -11,7 +11,6 @@ import org.example.backend.Dto.User.UserDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 public class LoginResponse {
-  private String token;
+  private String accessToken;
   private UserDTO user;
-  private String refreshToken;
 }

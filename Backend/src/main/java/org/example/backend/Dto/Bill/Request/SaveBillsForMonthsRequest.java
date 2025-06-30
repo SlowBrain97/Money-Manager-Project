@@ -11,6 +11,8 @@ import java.time.LocalDate;
 @Data
 public class SaveBillsForMonthsRequest {
   @Nullable
+  private Long userId;
+  @Nullable
   private String title;
   @Nullable
   private String description  ;

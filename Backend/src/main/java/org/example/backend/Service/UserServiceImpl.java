@@ -18,7 +18,7 @@ public class UserServiceImpl implements iUserService {
 
 
   public void createNewUser(CreateNewUserRequest createNewUserRequest){
-    if (userRepository.existsByUsername(createNewUserRequest.getUsername())){
+    if (userRepository.existsByEmail(createNewUserRequest.getEmail())){
         throw new UsernameExistedException("Username have already exist", "/api/v1/user/create");
     }
     User newUser = userMapper.mapToNewUser(createNewUserRequest);

@@ -21,8 +21,8 @@ public class CustomUserDetails implements UserDetails {
   @Override
   public Collection<? extends GrantedAuthority> getAuthorities() {
     return this.user.getRoles().stream()
-            .map(role -> new SimpleGrantedAuthority(role.name()))
-            .collect(Collectors.toList());
+            .map(role -> new SimpleGrantedAuthority("ROLE_"+role.name()))
+            .collect(Collectors.toSet());
   }
 
   @Override
@@ -32,7 +32,7 @@ public class CustomUserDetails implements UserDetails {
 
   @Override
   public String getUsername() {
-    return this.user.getUsername();
+    return this.user.getEmail();
   }
 
   @Override

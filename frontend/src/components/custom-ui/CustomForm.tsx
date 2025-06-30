@@ -44,6 +44,7 @@ interface FormProps {
   formSchema: z.ZodType<any, any>;
   defaultValue: Record<string, any>;
   handleSubmit: (data: any) => void;
+  className?: string;
 }
 
 const CustomForm = ({
@@ -51,6 +52,7 @@ const CustomForm = ({
   formSchema,
   defaultValue,
   handleSubmit,
+  className,
 }: FormProps) => {
   const form = useForm<z.infer<typeof formSchema>>({
     defaultValues: defaultValue,
@@ -167,11 +169,11 @@ const CustomForm = ({
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(handleSubmit)}
-        className="space-y-2 p-3"
+        className={`${className} space-y-3`}
       >
         {fields.map(renderField)}
-        <Button type="submit" variant={"default"} size={"default"}>
-          Gửi
+        <Button type="submit" variant={"default"} size={"sm"}>
+          Submit
         </Button>
       </form>
     </Form>

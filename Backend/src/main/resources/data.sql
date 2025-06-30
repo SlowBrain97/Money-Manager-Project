@@ -1,0 +1,12 @@
+-- INSERT INTO users (username, password, first_name, last_name, created_at)
+-- VALUES (
+--            'admin',
+--            '$2a$10$SUCxu5vwYbpeMgcW6MdzH.ivsuxLCF2ceWhmc9QBZZfv14w3yGBUC',
+--            'Admin',
+--            'Root',
+--            CURRENT_TIMESTAMP
+--        );
+-- INSERT INTO user_roles (user_id, roles) values (
+-- SELECT id, 'ADMIN' FROM users WHERE username = 'admin');
+--
+-- CREATE INDEX idx_bill_date_Time ON bill(dateTime);

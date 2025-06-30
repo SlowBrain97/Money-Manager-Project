@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import { FaWpforms } from "react-icons/fa6";
 import { FaCamera } from "react-icons/fa";
 import Camera from "./Camera";
-import CustomForm from "../custom-ui/Form";
+import CustomForm from "../custom-ui/CustomForm";
 import { BillFormContent } from "@/utils/StoreOfFormSchema";
 import { Bill, db } from "@/utils/storeDb";
 import TableWithPagination from "../custom-ui/CustomTable";

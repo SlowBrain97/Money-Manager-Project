@@ -233,7 +233,7 @@ const Camera = ({ handlerCamera }: CameraProps) => {
           </>
         ) : (
           <>
-            <video width="100%" height="100%" autoPlay ref={videoRef} />
+            <video className="w-full h-full object-cover" autoPlay playsInline muted ref={videoRef} />
             <Button
               variant="circle"
               size="lg"

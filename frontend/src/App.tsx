@@ -13,6 +13,7 @@ import SlideAnimation from "./utils/framer-animation/SlideAnimation";
 import ShowUpAnimation from "./utils/framer-animation/ShowUpAnimation";
 import { ArrowLeftCircleIcon } from "lucide-react";
 import useNavigationPath from "./hooks/useNavigationPath";
+import Login from "./pages/Login";
 
 const BillsPage = lazy(() => import("./pages/BillsPage"));
 function App() {
@@ -24,7 +25,7 @@ function App() {
         <ShowUpAnimation>
           <Layout.Header>
             <div
-              className={`flex justify-between items-center mb-2 bg-color-yellow rounded-b-lg p-responsive-padding text-responsive-h3 gap-y-1.5 ${
+              className={`flex justify-between items-center mb-2 bg-color-yellow rounded-b-lg p-responsive-padding text-responsive-h3 ${
                 screen === "mobile" && "pt-[15%]"
               }`}
             >
@@ -60,15 +61,35 @@ function App() {
         </ShowUpAnimation>
 
         <Layout.Body className="flex-1">
-          <AnimatePresence mode="popLayout">
-            <SlideAnimation key={location.pathname}>
-              <Suspense fallback={<Loading />}>
-                <Routes location={location}>
-                  <Route path="/" element={<HomePage />} />
-                  <Route path="/bills" element={<BillsPage />}></Route>
-                </Routes>
-              </Suspense>
-            </SlideAnimation>
+          <AnimatePresence mode="wait">
+            <Suspense fallback={<Loading />}>
+              <Routes location={location} key={location.pathname}>
+                <Route
+                  path="/login"
+                  element={
+                    <ShowUpAnimation>
+                      <Login />
+                    </ShowUpAnimation>
+                  }
+                />
+                <Route
+                  path="/"
+                  element={
+                    <SlideAnimation>
+                      <HomePage />
+                    </SlideAnimation>
+                  }
+                />
+                <Route
+                  path="/bill"
+                  element={
+                    <SlideAnimation>
+                      <BillsPage />
+                    </SlideAnimation>
+                  }
+                />
+              </Routes>
+            </Suspense>
           </AnimatePresence>
         </Layout.Body>
 
